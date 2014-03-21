@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bookproject1" >
+    <uses-sdk android:minSdkVersion="8" >
+
+    </uses-sdk>
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.bookproject1.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CheatActivity"
+            android:label="@string/app_name" />
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="16d4f742490c6c0623a0aa5d790db48b72e07cc4"/>
+
+    </application>
+
+</manifest>

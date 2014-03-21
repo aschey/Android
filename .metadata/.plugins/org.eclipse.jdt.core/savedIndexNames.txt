@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+/home/aschey/programs/android/.metadata/.plugins/org.eclipse.jdt.core
+2676662095.index
+3703194086.index
+872669235.index
