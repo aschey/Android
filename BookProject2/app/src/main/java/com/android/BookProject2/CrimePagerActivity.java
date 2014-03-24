@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by aschey on 3/5/14.
@@ -33,7 +35,8 @@ public class CrimePagerActivity extends FragmentActivity {
             @Override
             public Fragment getItem(int position) {
                 Crime crime = mCrimes.get(position);
-                return CrimeActivity.CrimeFragment.newInstance(crime.getId());
+                Log.e("position", Integer.toString(position));
+                return CrimeActivity.CrimeFragment.newInstance(crime.getId(), position);
             }
 
             @Override
@@ -41,5 +44,20 @@ public class CrimePagerActivity extends FragmentActivity {
                 return mCrimes.size();
             }
         });
+
+        int crimeNumber = getIntent()
+                .getIntExtra(CrimeActivity.CrimeFragment.EXTRA_CRIME_NUMBER, 0);
+        //Log.e("crimeNumber", Integer.toString(crimeNumber));
+        //mViewPager.setCurrentItem(crimeNumber);
+        UUID crimeId = (UUID)getIntent()
+                .getSerializableExtra(CrimeActivity.CrimeFragment.EXTRA_CRIME_ID);
+        for (int i = 0; i < mCrimes.size(); i++)
+        {
+            if (mCrimes.get(i).getId().equals(crimeId)) {
+                mViewPager.setCurrentItem(i);
+                break;
+            }
+        }
+
     }
 }
