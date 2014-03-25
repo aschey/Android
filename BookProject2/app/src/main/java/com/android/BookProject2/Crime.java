@@ -4,6 +4,7 @@ import android.text.format.DateFormat;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.UUID;
 
 /**
@@ -12,13 +13,14 @@ import java.util.UUID;
 public class Crime {
     private UUID mId;
     private String mTitle;
-    private String mDate;
+    private Calendar mDate;
     private boolean mSolved;
 
     public Crime() {
         mId = UUID.randomUUID();
         Calendar calendar = Calendar.getInstance();
-        mDate = DateFormat.format("E MMM dd kk:mm:ss zz yyyy", calendar).toString();
+        //mDate = DateFormat.format("MMM dd yyyy", calendar).toString();
+        mDate = calendar.toString();
     }
 
     @Override

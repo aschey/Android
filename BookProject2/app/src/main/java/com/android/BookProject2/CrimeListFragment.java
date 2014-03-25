@@ -39,7 +39,8 @@ public class CrimeListFragment extends ListFragment {
         // the intent constructor requires
         Intent i = new Intent(getActivity(), CrimePagerActivity.class);
         // tells crimefragment which crime to display
-        i.putExtra(CrimeActivity.CrimeFragment.EXTRA_CRIME_ID, c.getId());
+        i.putExtra(CrimeFragment.EXTRA_CRIME_ID, c.getId());
+        i.putExtra(CrimeFragment.EXTRA_CRIME_NUMBER, position);
         startActivity(i);
     }
 
